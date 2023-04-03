@@ -1,0 +1,50 @@
+
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+
+
+import static java.io.FileDescriptor.in;
+
+
+public class DzToFile {
+
+        public static void main(String[] args)  {
+        File file = new File("dz3File");
+            PrintWriter pw = null;
+            try {
+                pw = new PrintWriter("dz3File");
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+
+
+            pw.println("Ввод числа: ");
+        int num1 = Integer.parseInt("");
+
+        pw.println("Ввод знака: ");
+        String zn = in.toString();
+
+        pw.println("Ввод числа: ");
+        int num2 = Integer.parseInt("");
+
+        if (zn.equals("+")) {
+            pw.println(num1 + num2);
+        }
+        if (zn.equals("-")) {
+            pw.println(num1 - num2);
+        }
+        if (zn.equals("*")) {
+            pw.println(num1 * num2);
+        }
+        if (zn.equals("/")) {
+            pw.println(num1 / num2);
+        }
+
+
+        pw.close();
+
+
+    }
+}
